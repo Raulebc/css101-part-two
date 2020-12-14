@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>CSS - RAUL</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="normalize.css"> -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="flex flex-col text-center p-16 text-gray-600">
+        <div class="uppercase text-3xl mb-2">FAQ</div>
+        <div>You need an answer? You have it man.</div>
+    </header>
+    <div id="app" class="flex items-center justify-center px-16">
+        <div class="flex items-start justify-center w-3/5">
+            <div class="mr-4 p-1 text-gray-600" @click="isOpen = !isOpen">
+                <template v-if="!isOpen">
+                    <svg class="w-8 h-8 stroke-current stroke-1" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </template>
+                <template v-else>
+                    <svg class="w-8 h-8 stroke-current stroke-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </template>
+            </div>
+            <div>
+                <div class="text-3xl font-bold mb-6" @click="isOpen = !isOpen">
+                    Can i ask you something?
+                </div>
+                <div v-show="isOpen">
+                    Of course you can. If you want it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda totam consequatur perferendis nam accusantium, pariatur reprehenderit illo quo animi, officiis, dolor aliquam. Necessitatibus commodi impedit sit ducimus autem saepe reprehenderit.
+                </div>
+            </div> 
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isOpen: false,
+            },
+            mounted() {
+                console.log('hoa');
+            }
+        });
+    </script>
+</body>
+
+
+</html>
